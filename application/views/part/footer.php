@@ -152,25 +152,6 @@
 					</ul>
 					<!-- end: Follow Us -->
 				
-					<!-- start: Newsletter -->
-					<h3>Newsletter</h3>
-					<form id="newsletter">
-						
-						<p>Please leave us your email</p>
-						<div class="row">
-							<div class="col-lg-12">
-								<label>@:</label>
-						    	<div class="input-group">
-						      		<input type="text" class="form-control">
-						      		<span class="input-group-btn">
-						        		<button class="btn btn-default" type="button">Submit!</button>
-						      		</span>
-						    	</div><!-- /input-group -->
-						  	</div><!-- /.col-->
-						</div>
-					</form>
-					<!-- end: Newsletter -->
-				
 				</div>
 				
 			</div>

@@ -27,7 +27,7 @@
         			</ul>
       			</li>
       			<li ><a x href="front/about">Loker</a></li>
-      			<li ><a x href="front/about">Alumni</a></li>
+      			<li ><a x href="front/alumni">Alumni</a></li>
       			<li ><a x href="front/about">Gallery</a></li>
       			<li ><a x href="front/login/perusahaan">Login</a></li>
     		</ul>

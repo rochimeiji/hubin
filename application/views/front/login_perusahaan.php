@@ -1,6 +1,6 @@
 <ul id="myTab" class="nav nav-tabs" style='margin:0px 0px 10px'>
-	<li class="active"><a x href="front/login/perusahaan" data-toggle="tab">Login Perusahaan</a></li>
-	<li class=""><a x href="front/login/alumni" data-toggle="tab">Login Alumni</a></li>
+	<li class="active"><a x href="front/login/perusahaan">Login Perusahaan</a></li>
+	<li class=""><a x href="front/login/alumni">Login Alumni</a></li>
 </ul>
 <!-- Form Perusahaan -->
 <form method="post">

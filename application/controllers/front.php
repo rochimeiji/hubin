@@ -17,6 +17,11 @@ class front extends CI_Controller {
 		$data['content'] = "front/login_".$role;
 		$this->load->view('main',$data);
 	}
+	function alumni(){
+		$data['menu'] = "menu/menu_alumni";
+		$data['content'] = "front/alumni";
+		$this->load->view('main',$data);
+	}
 	function about(){
 		// $data['menu'] = "menu/page";
 		$data['content'] = "front/about";
