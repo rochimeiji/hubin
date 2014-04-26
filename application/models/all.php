@@ -28,7 +28,7 @@ class all extends CI_Model{
 	function getMsg(){
 		$msg = $this->session->userdata('msg');
 		if($msg){
-			echo "<div class='alert alert-$msg[style]'>$msg[msg]</div>";
+			echo "<div class='alert alert-$msg[style]'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>$msg[msg]</div>";
 			$this->session->unset_userdata('msg','');
 		}
 	}

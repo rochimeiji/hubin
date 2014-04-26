@@ -27,7 +27,7 @@
 	function direct($url=''){
 		echo"
 		<script>
-			$('body').load('$url?x=1');
+			$('#body').load('$url?x=1');
 		</script>
 		";
 	}

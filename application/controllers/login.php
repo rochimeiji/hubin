@@ -4,12 +4,14 @@ class login extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-
+		if($this->session->userdata('role')=='admin'){
+			redirect('admin');
+		}
 	}
 	function index(){
 		// $data['menu'] = "menu/page";
 		if(post('login')){
-			$row = $this->db->get_where('user',array('username'=>post('user'),'password'=>sha1(post('pass'))))->row_array();
+			$row = $this->db->get_where('user',array('user'=>post('user'),'pass'=>sha1(post('pass'))))->row_array();
 			if($row){
 				$data = array(
 					'login'=>true,
@@ -19,7 +21,7 @@ class login extends CI_Controller {
 				$this->session->set_userdata($data);
 				direct('admin');
 			}else{
-				
+				$this->all->setMsg('error','Username dan Password salah');
 			}
 		}
 		$data['page_title'] = "Login Admin";
@@ -33,7 +35,7 @@ class login extends CI_Controller {
 					'role'=>'',
 				);
 		$this->session->unset_userdata($data);
-		direct();
+		direct('login');
 	}
 }
 

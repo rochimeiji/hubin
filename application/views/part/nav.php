@@ -12,7 +12,22 @@
       		</button>
       		<a class="navbar-brand" href="index"><i class="fa fa-code"></i> Sma<span>rt</span>.</a>
     	</div>
-
+	<?php
+		if($this->session->userdata('role') == 'admin'){
+	?>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+    	<div class="collapse navbar-collapse" id="main-navigation">
+      		<ul class="nav navbar-right navbar-nav">
+      			<li ><a x href="admin">Dashboard</a></li>
+      			<li ><a x href="admin/siswa">Siswa</a></li>
+      			<li ><a x href="admin/perusahaan">Perusahaan</a></li>
+      			<li ><a x href="login/logout">Logout</a></li>
+    		</ul>
+    	</div><!-- /.navbar-collapse -->		
+	</div>
+	<?php
+		}else{
+	?>
     	<!-- Collect the nav links, forms, and other content for toggling -->
     	<div class="collapse navbar-collapse" id="main-navigation">
       		<ul class="nav navbar-right navbar-nav">
@@ -33,6 +48,7 @@
     		</ul>
     	</div><!-- /.navbar-collapse -->		
 	</div>
+	<?php } ?>
 	<!--/.container-->			
 </nav>
 <!--end: Navbar -->

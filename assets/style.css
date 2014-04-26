@@ -41,3 +41,8 @@
   margin:0px;
   background:none;
 }
+/*label error*/
+label.error{
+	margin:7px 0px 0px;
+	color:red;
+}

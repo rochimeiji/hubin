@@ -4,7 +4,9 @@ class admin extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		
+		if($this->session->userdata('role') != 'admin'){
+			redirect('login');
+		}
 	}
 	function index(){
 		// $data['menu'] = "menu/page";
