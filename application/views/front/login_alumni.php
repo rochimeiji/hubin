@@ -7,12 +7,12 @@
 	<input type='hidden' name='login-perusahaan' value='true' />
 	<div class="form-group">
 		<label>Username</label>
-		<input type="text" name="user" class="form-control" value="<?php echo post('user');?>" placeholder="username">
+		<input type="text" name="user" class="form-control col-md-6" value="<?php echo post('user');?>" placeholder="username">
 	</div>
 		
 	<div class="form-group">
 		<label>Password</label>
-		<input type="password" name="pass" class="form-control" placeholder="password">
+		<input type="password" name="pass" class="form-control col-md-6" placeholder="password">
 	</div>
 
 	<div class="actions">
