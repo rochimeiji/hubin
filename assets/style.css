@@ -1,0 +1,43 @@
+@import "css/bootstrap.min.css";
+@import "css/style.min.css";
+@import "css/parallax-slider.css";
+
+/*Load*/
+.cl{
+	clear:both;
+}
+/*Loading*/
+[pointer]{
+	cursor:pointer;
+}
+[loading]{
+  display:none;
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  z-index:9999;
+}
+[loading] img{
+  width:100px;
+  height:100px;
+}
+/*Line SMK*/
+.line-smk{
+	height:5px;
+}
+.line-smk div{
+	height:5px;
+	width:25%;
+	float:left;
+}
+.line-surta{background:#2fac0d;}
+.line-rpl{background:#29a9df;}
+.line-geota{background:#d6a203;}
+.line-garmen{background:#ac09bb;}
+/*Style MIN*/
+#page-title{
+  margin:0px;
+  background:none;
+}
