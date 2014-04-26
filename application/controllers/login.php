@@ -4,12 +4,12 @@ class login extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		if($this->session->userdata('role')=='admin'){
-			redirect('admin');
-		}
 	}
 	function index(){
 		// $data['menu'] = "menu/page";
+		if($this->session->userdata('role')=='admin'){
+			redirect('admin');
+		}
 		if(post('login')){
 			$row = $this->db->get_where('user',array('user'=>post('user'),'pass'=>sha1(post('pass'))))->row_array();
 			if($row){

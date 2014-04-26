@@ -13,7 +13,7 @@
       		<a class="navbar-brand" href="index"><i class="fa fa-code"></i> Sma<span>rt</span>.</a>
     	</div>
 	<?php
-		if($this->session->userdata('role') == 'admin'){
+		if($this->uri->segment(1)=='admin' && $this->session->userdata('role') == 'admin'){
 	?>
 		<!-- Collect the nav links, forms, and other content for toggling -->
     	<div class="collapse navbar-collapse" id="main-navigation">
