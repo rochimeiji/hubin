@@ -35,7 +35,7 @@
 	<!-- Form Pendidikan Formal-->
 	<div class="panel panel-primary">
     	<div class="panel-heading title">
-	      <h3 class="panel-title">Pendidikan Formal</h3>
+	      <h3 class="panel-title">Pendidikan Formal <a pointer class='label label-success' toggle='pndk_formal'>Tambah</a></h3>
 	    </div>
 	    <div class="panel-body">
 			<div class="form-group">
@@ -48,18 +48,19 @@
 				</tr>
 			<?php } ?>
 			</table>
-	    	<form id='pendidikan-formal' method='post'>
-				<div class='col-md-5 tahun-pndk-formal'>
-	    			<label><span class="label label-success">+</span> Tahun awal dan akhir</label>
-					<input type="text" name="awal_pndk_formal" class="form-control" value="<?php //echo $get_profil['awal_pndk_formal'];?>">
-					<input type="text" name="akhir_pndk_formal" class="form-control" value="<?php //echo $get_profil['akhir_pndk_formal'];?>">
-					<div class='cl'></div>
+	    	<form id='pendidikan-formal' method='post' target-toggle='pndk_formal'>
+				<div class="form-group col-md-3">
+					<label>Awal Tahun</label>
+					<input type="text" name="awal_pndk_formal" class="form-control" placeholder="Awal">
 				</div>
-				<div class='col-md-7'>
-	    			<label><span class="label label-success">+</span> Nama Pendidikan Formal</label>
-					<input type="text" name="nama_pndk_formal" class="form-control" value="<?php //echo $get_profil['awal_pndk_formal'];?>">
+				<div class="form-group col-md-3">
+					<label>Akhir Tahun</label>
+					<input type="text" name="akhir_pndk_formal" class="form-control" placeholder="Akhir">
 				</div>
-					<div class='cl'></div>
+				<div class='form-group col-md-12'>
+	    			<label>Nama Pendidikan Formal</label>
+					<input type="text" name="nama_pndk_formal" class="form-control" placeholder="Pendidikan Formal">
+				</div>				
 				<div class="actions" style='margin:10px 0px;'>
 					<input type="submit" name='add-pndk-formal' value="Tambah Pendidikan Formal" class="btn btn-primary col-sm-12">
 				</div>
@@ -70,7 +71,7 @@
 	<!-- Form Pendidikan Informal-->
 	<div class="panel panel-primary">
     	<div class="panel-heading title">
-	      <h3 class="panel-title">Pendidikan Informal</h3>
+	      <h3 class="panel-title">Pendidikan Informal <a pointer class='label label-success' toggle='pndk_informal'>Tambah</a></h3>
 	    </div>
 	    <div class="panel-body">
 			<div class="form-group">
@@ -83,20 +84,62 @@
 				</tr>
 			<?php } ?>
 			</table>
-	    	<form id='pendidikan-informal' method='post'>
-				<div class='col-md-5 tahun-pndk-formal'>
-	    			<label><span class="label label-success">+</span> Tahun awal dan akhir</label>
-					<input type="text" name="awal_pndk_informal" class="form-control" value="<?php //echo $get_profil['awal_pndk_formal'];?>">
-					<input type="text" name="akhir_pndk_informal" class="form-control" value="<?php //echo $get_profil['akhir_pndk_formal'];?>">
-					<div class='cl'></div>
+	    	<form id='pendidikan-informal' method='post' target-toggle='pndk_informal'>
+				<div class="form-group col-md-3">
+					<label>Awal Tahun</label>
+					<input type="text" name="awal_pndk_informal" class="form-control" placeholder="Awal">
 				</div>
-				<div class='col-md-7'>
-	    			<label><span class="label label-success">+</span> Nama Pendidikan Informal</label>
-					<input type="text" name="nama_pndk_informal" class="form-control" value="<?php //echo $get_profil['awal_pndk_formal'];?>">
+				<div class="form-group col-md-3">
+					<label>Akhir Tahun</label>
+					<input type="text" name="akhir_pndk_informal" class="form-control" placeholder="Akhir">
+				</div>
+				<div class='form-group col-md-12'>
+	    			<label>Nama Pendidikan Informal</label>
+					<input type="text" name="nama_pndk_informal" class="form-control" placeholder="Pendidikan Informal">
+				</div>
+				<div class="actions" style='margin:10px 0px;'>
+					<input type="submit" name='add-pndk-formal' value="Tambah Pendidikan Informal" class="btn btn-primary col-sm-12">
+				</div>
+			</form>
+			</div>
+	    </div>
+  	</div>
+	<!-- Form Pengalaman Organisasi-->
+	<div class="panel panel-primary">
+    	<div class="panel-heading title">
+	      <h3 class="panel-title">Pengalaman Organisasi <a pointer class='label label-success' toggle='pengalaman_organisasi'>Tambah</a></h3>
+	    </div>
+	    <div class="panel-body">
+			<div class="form-group">
+			<table class='table table-striped'>
+			<?php foreach($this->alumni->get_org($id_user) as $row_org){ ?>
+				<tr>
+					<td style='max-width:150px'>Tahun <?php echo $row_org['awal_org']."-".$row_org['akhir_org'];?></td>
+					<td>: <?php echo $row_org['posisi_org']." di ".$row_org['nama_org']?></td>
+					<td><a rel-id='<?php echo $row_org['id_org'];?>' delete='pengalaman_organisasi' class='close'>×</a></td>
+				</tr>
+			<?php } ?>
+			</table>
+	    	<form id='pengalaman-organisasi' method='post' target-toggle='pengalaman_organisasi'>
+				<div class="form-group col-md-3">
+					<label>Awal Tahun</label>
+					<input type="text" name="awal_org" class="form-control" placeholder="Awal">
+				</div>
+				<div class="form-group col-md-3">
+					<label>Akhir Tahun</label>
+					<input type="text" name="akhir_org" class="form-control" placeholder="Akhir">
+				</div>
+				<div class="form-group col-md-6">
+					<label>Posisi</label>
+					<input type="text" name="posisi_org" class="form-control" placeholder="Posisi">
+				</div>
+				<div class="form-group col-md-12">
+					<label>Nama Organisasi</label>
+					<input type="text" name="nama_org" class="form-control" placeholder="Organisasi">
 				</div>
 					<div class='cl'></div>
 				<div class="actions" style='margin:10px 0px;'>
-					<input type="submit" name='add-pndk-formal' value="Tambah Pendidikan Informal" class="btn btn-primary col-sm-12">
+					<input type="submit" name='add-pndk-formal' value="Tambah Pengalaman Organisasi" class="btn btn-primary col-sm-12">
 				</div>
 			</form>
 			</div>

@@ -31,6 +31,9 @@
   position:absolute;
   visibility:hidden;
 }
+[target-toggle]{
+  display:none;
+}
 /*Line SMK*/
 .line-smk{
 	height:5px;
@@ -53,11 +56,6 @@
 label.error{
 	margin:5px 0px 0px;
 	color:red;
-}
-.tahun-pndk-formal input{
-  width:40%;
-  float:left;
-  margin-right:5%;
 }
 .foto{
   width:100px;

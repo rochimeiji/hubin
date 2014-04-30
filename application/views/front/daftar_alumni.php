@@ -16,7 +16,7 @@
 		<h2>Daftar Alumni</h2>
 	</legend>
 	<!-- Form Perusahaan -->
-	<form method="post">
+	<form method="post" id='user'>
 		<?php $this->all->getMsg();?>
 		<input type='hidden' name='daftar' value='true' />
 
@@ -27,7 +27,7 @@
 			
 		<div class="form-group">
 			<label>Password</label>
-			<input type="password" name="pass" class="form-control" placeholder="Password">
+			<input type="password" id='pass' name="pass" class="form-control" placeholder="Password">
 		</div>
 
 		<div class="form-group">
@@ -46,24 +46,6 @@
 		</div>
 
 		<div class="form-group">
-			<label>Tempat Lahir</label>
-			<input type="text" name="tmp_lhr_siswa" class="form-control" value="<?php echo post('tmp_lhr_siswa');?>" placeholder="Tempat Lahir">
-		</div>
-
-		<div class="form-group">
-			<label>Tanggal Lahir</label>
-			<input type="date" name="tgl_lhr_siswa" class="form-control" value="<?php echo post('tgl_lhr_siswa');?>" placeholder="Tempat Lahir">
-		</div>
-		
-		<div class="form-group">
-			<label>Jenis Kelamin</label>
-		<?php
-			$sel_jk = array('Laki-laki'=>'Laki-laki','Perempuan'=>'Perempuan');
-			echo form_dropdown("jk_siswa",$sel_jk,post('jk_siswa'),"class='form-control'");
-		?>
-		</div>
-
-		<div class="form-group">
 			<label>Jurusan</label>
 		<?php
 			foreach($this->db->get('jurusan')->result_array() as $s){
@@ -74,10 +56,10 @@
 		</div>
 
 		<div class="form-group">
-			<label>Tahun Ajaran</label>
+			<label>Lulusan</label>
 		<?php
 			foreach($this->db->get('ta')->result_array() as $s){
-				$sel_ta[$s['id_ta']] = $s['nama_ta'];
+				$sel_ta[$s['id_ta']] = $s['lulusan'];
 			} 
 			echo form_dropdown("id_ta",$sel_ta,post('id_ta'),"class='form-control'");
 		?>

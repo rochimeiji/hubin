@@ -29,6 +29,11 @@ $(window).bind('popstate', function() {
 	}});
 });
 
+
+// Toogle
+$(document).on('click','[toggle]',function(){
+	$("[target-toggle='"+$(this).attr('toggle')+"']").fadeToggle(500);
+});
 /*// Textarea Elastic
 $(document).on('click',document,function(){
 

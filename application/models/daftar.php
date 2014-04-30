@@ -7,13 +7,10 @@ class daftar extends CI_Model{
 				'pass' => sha1(post('pass')),
 				'nama_siswa' => post('nama_siswa'),
 				'email_siswa' => post('email_siswa'),
-				'tmp_lhr_siswa' => post('tmp_lhr_siswa'),
-				'tgl_lhr_siswa' => post('tgl_lhr_siswa'),
-				'jk_siswa' => post('jk_siswa'),
 				'id_jurusan' => post('id_jurusan'),
 				'id_ta' => post('id_ta'),
 			);
-			// $this->db->insert('siswa',$data);
+			$this->db->insert('siswa',$data);
 			$this->all->setMsg('success','Daftar alumni berhasil, aktifasi akan diaktifkan oleh admin');
 			$_POST = '';
 		}

@@ -9,14 +9,22 @@ class alumni extends CI_Model{
 		$this->db->flush_cache();
 		return $result;
 	}
+	// Pendidikan Formal
 	function get_pndk_formal($id){
 		$this->db->where('id_siswa',$id);
 		$result = $this->db->get('pendidikan_formal')->result_array();
 		return $result;
 	}
+	// Pendidikan Informal
 	function get_pndk_informal($id){
 		$this->db->where('id_siswa',$id);
 		$result = $this->db->get('pendidikan_informal')->result_array();
+		return $result;
+	}
+	// Pendidikan Informal
+	function get_org($id){
+		$this->db->where('id_siswa',$id);
+		$result = $this->db->get('pengalaman_organisasi')->result_array();
 		return $result;
 	}
 	function aksi($id_siswa){
@@ -97,6 +105,17 @@ class alumni extends CI_Model{
 		if(post('delete')=='pndk_informal'){
 			$this->db->where('id_pndk_informal',post('id'));
 			$this->db->delete('pendidikan_informal');
+		}
+		// Tambah Pendidikan Informal
+		if(post('nama_org')){
+			$data = array(
+				'id_siswa' => $id_siswa,
+				'awal_org' => post("awal_org"),
+				'akhir_org' => post("akhir_org"),
+				'posisi_org' => post("posisi_org"),
+				'nama_org' => post("nama_org"),
+			);
+			$this->db->insert('pengalaman_organisasi',$data);
 		}
 	}
 }
