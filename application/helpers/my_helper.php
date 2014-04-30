@@ -12,6 +12,9 @@
 	function myurl(){
 		return $_SERVER['REDIRECT_URL'];
 	}
+	function alert($msg){
+		echo "<script>alert('$msg')</script>";
+	}
 	function push_url($url=""){
 		$base = "http://".$_SERVER['HTTP_HOST'].str_replace('index.php','',$_SERVER['SCRIPT_NAME']);
 		echo"

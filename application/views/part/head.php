@@ -7,7 +7,7 @@
   	<base href='<?php echo base_url();?>' />
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>SMART BOOTSTRAP THEME by creativeLabs</title> 
+	<title>HUBIN</title> 
 	<meta name="description" content="Smart Bootstrap Theme"/>
 	<meta name="keywords" content="Template, Theme, web, html5, css3, Bootstrap" />
 	<meta name="author" content="Łukasz Holeczek from creativeLabs"/>
@@ -25,7 +25,8 @@
 	<meta property="og:image" content=""/>
 	<!-- end: Facebook Open Graph -->
 		
-	<link href="assets/style.css" rel="stylesheet">
+	<!-- <link href="assets/style.css" rel="shortcut-icon"> -->
+	<link href="front/style" rel="stylesheet" media='screen' type='text/css'>
 	<!-- end: CSS -->
 
 	<script src="assets/jquery.js"></script>

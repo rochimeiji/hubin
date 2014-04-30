@@ -1,6 +1,10 @@
-@import "css/bootstrap.min.css";
-@import "css/style.min.css";
-@import "css/parallax-slider.css";
+<?php
+  header("Content-type: text/css");
+  $jurusan = $this->session->userdata('jurusan');
+?>
+@import "<?php echo base_url();?>assets/css/bootstrap.min.css";
+@import "<?php echo base_url();?>assets/css/style.min.css";
+@import "<?php echo base_url();?>assets/css/parallax-slider.css";
 
 /*Load*/
 .cl{

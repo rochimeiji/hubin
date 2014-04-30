@@ -1,5 +1,6 @@
 <script src='assets/js/validasi.js' ></script>
 
+
 <div class='col-md-6 pull-right'>
 	<legend>
 		<h2>Ketentuan Login</h2>
@@ -12,14 +13,10 @@
 	</blockquote>
 </div>
 <div class='col-md-6'>
-	<ul id="myTab" class="nav nav-tabs" style='margin:0px 0px 10px'>
-		<li class=""><a x href="front/login/perusahaan">Login Perusahaan</a></li>
-		<li class="active"><a x href="front/login/alumni">Login Alumni</a></li>
-	</ul>
 	<!-- Form Perusahaan -->
-	<form id='login' method="post">
+	<form method="post">
 		<?php $this->all->getMsg();?>
-		<input type='hidden' name='login-alumni' value='true' />
+		<input type='hidden' name='daftar' value='true' />
 		<div class="form-group">
 			<label>Username</label>
 			<input type="text" name="user" class="form-control" value="<?php echo post('user');?>" placeholder="Username">
@@ -31,7 +28,7 @@
 		</div>
 
 		<div class="form-group">
-			<a x href='front/daftar/alumni'>Register !</a>
+			<a href='front/daftar/perusahaan'>Register !</a>
 		</div>
 
 		<div class="actions">

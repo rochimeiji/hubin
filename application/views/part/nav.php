@@ -21,10 +21,6 @@
       			<li ><a x href="admin">Dashboard</a></li>
       			<li ><a x href="admin/siswa">Siswa</a></li>
       			<li ><a x href="admin/perusahaan">Perusahaan</a></li>
-      			<li ><a x href="login/logout">Logout</a></li>
-    		</ul>
-    	</div><!-- /.navbar-collapse -->		
-	</div>
 	<?php
 		}else{
 	?>
@@ -44,11 +40,22 @@
       			<li ><a x href="front/about">Loker</a></li>
       			<li ><a x href="front/alumni">Alumni</a></li>
       			<li ><a x href="front/about">Gallery</a></li>
-      			<li ><a x href="front/login/perusahaan">Login</a></li>
-    		</ul>
-    	</div><!-- /.navbar-collapse -->		
-	</div>
-	<?php } ?>
+  <?php if($this->session->userdata('role')=='alumni'){ ?>
+            <li ><a x href="front/profil_alumni">Profil</a></li>
+            <li ><a x href="front/forum">Forum</a></li>
+	<?php 
+
+        }}
+        // Login dan Logout
+        if($this->session->userdata('login')){
+          echo "<li ><a x href='login/logout'>Logout</a></li>";
+        }else{
+          echo "<li ><a x href='front/login/alumni'>Login</a></li>";
+        }
+   ?>
+        </ul>
+      </div><!-- /.navbar-collapse -->    
+  </div>
 	<!--/.container-->			
 </nav>
 <!--end: Navbar -->

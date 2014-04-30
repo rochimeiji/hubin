@@ -35,7 +35,7 @@ class login extends CI_Controller {
 					'role'=>'',
 				);
 		$this->session->unset_userdata($data);
-		direct('login');
+		direct();
 	}
 }
 

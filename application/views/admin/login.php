@@ -1,10 +1,10 @@
-<script src='assets/js/page/login_admin.js' ></script>
+<script src='assets/js/validasi.js' ></script>
 <div class='col-md-12'>
 	<legend>
 		<h3>Login Admin</h3>
 	</legend>
 	<?php $this->all->getMsg(); ?>
-	<form method="post" id='login_admin' >
+	<form method="post" >
 		<input type='hidden' name='login' value='true' />
 		<div class="form-group">
 			<input type="text" name="user" class="form-control" value="" placeholder="username">

@@ -6,7 +6,7 @@
 	foreach($this->db->get('ta')->result_array() as $s){
 		$sel_ta[$s['nama_ta']] = $s['nama_ta'];
 	} 
-	echo form_dropdown("ta_siswa",$sel_ta,post('ta_siswa'),"class='form-control'");
+	echo form_dropdown("id_ta",$sel_ta,post('id_ta'),"class='form-control'");
 ?>
 	</div>
 		
@@ -16,7 +16,7 @@
 	foreach($this->db->get('jurusan')->result_array() as $s){
 		$sel_jurusan[$s['nama_jurusan']] = $s['nama_jurusan'];
 	} 
-	echo form_dropdown("ta_siswa",$sel_jurusan,post('ta_siswa'),"class='form-control'");
+	echo form_dropdown("id_jurusan",$sel_jurusan,post('id_jurusan'),"class='form-control'");
 ?>
 	</div>
 

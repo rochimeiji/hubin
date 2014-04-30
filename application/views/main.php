@@ -14,7 +14,8 @@ if(get('x')=="content"){
 		$this->load->view($menu);
 	}
 }else{
-	echo "<div id='body'>";
+	echo "
+	<div id='body'>";
 	$this->load->view('part/nav');
 	if(isset($page_title)){
 		$this->load->view('part/page_title');
@@ -43,9 +44,6 @@ if(get('x')=="content"){
 	</div>";
 	echo"
 	</div>
-	<script>  
-	window.history.pushState({path:location.pathname},'','".$_SERVER['REDIRECT_URL']."');
-	</script>
 	</div>
 	";
 }
