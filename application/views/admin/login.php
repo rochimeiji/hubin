@@ -4,7 +4,7 @@
 		<h3>Login Admin</h3>
 	</legend>
 	<?php $this->all->getMsg(); ?>
-	<form method="post" >
+	<form method="post" id='login'>
 		<input type='hidden' name='login' value='true' />
 		<div class="form-group">
 			<input type="text" name="user" class="form-control" value="" placeholder="username">
