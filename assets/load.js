@@ -34,10 +34,20 @@ $(window).bind('popstate', function() {
 $(document).on('click','[toggle]',function(){
 	$("[target-toggle='"+$(this).attr('toggle')+"']").fadeToggle(500);
 });
-/*// Textarea Elastic
-$(document).on('click',document,function(){
 
-});*/
+// Theme
+$(document).on('click','.line-smk div',function(){
+	$data = "jurusan="+$(this).attr('rel');
+	$.ajax({url:'front/style',type:'post',data:$data,
+		beforeSend:function(){
+			$('[loading]').fadeIn(100);
+		},
+		complete:function(a){
+			$('[style]').attr('href','front/style');
+			$('[loading]').fadeOut(100);
+		}	
+	});
+});
 
 // AJAX Reload
 $(function(){
@@ -58,12 +68,12 @@ $(function(){
 				beforeSend:function(){
 					$('[loading]').fadeIn(100);
 				},
-				success: function(a){
+				complete: function(a){
 					$('[loading]').fadeOut(100);
-					$($target).html(a);
+					$($target).html(a.responseText);
 			}
 		});
-		window.history.pushState({path:location.pathname},'',$url);
+					window.history.pushState({path:location.pathname},'',$url);
 		return false;
 	 });
 });
@@ -88,13 +98,14 @@ $(function(){
 				beforeSend:function(){				
 					$('[loading]').fadeIn(100);
 				},
-				success:function(a){
+				complete:function(a){
+					$('[style]').attr('href','front/style');
 					$('[loading]').fadeOut(100);
-					$($target).html(a);
+					$($target).html(a.responseText);
 					// window.scrollTo(0,0);
 				}
 			});
-			window.history.pushState({path:location.pathname},'',$url);
+					window.history.pushState({path:location.pathname},'',$url);
 			return false;
 		});
 	});

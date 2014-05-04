@@ -81,8 +81,6 @@
 					
 					<h3>Photo Stream</h3>
 					<div class="flickr-widget">
-							<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=9&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=29609591@N08"></script>
-						<div class="clear"></div>
 					</div>
 					
 				</div>

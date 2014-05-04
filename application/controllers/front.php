@@ -32,6 +32,9 @@ class front extends CI_Controller {
 	}
 	// Alumni
 	function alumni(){
+		$this->load->model('alumni');
+		$data['get_alumni'] = $this->alumni->get_alumni();
+		$data['page_title'] = "Data Alumni";
 		$data['menu'] = "menu/menu_alumni";
 		$data['content'] = "front/alumni";
 		$this->load->view('main',$data);
@@ -42,9 +45,21 @@ class front extends CI_Controller {
 		$id_user = $this->session->userdata('id_siswa');
 		$this->alumni->aksi($id_user);
 		$data['get_profil'] = $this->alumni->get_profil($id_user);
+		$data['page_title'] = "Profil Dan Curriculum Vitae";
 		$data['id_user'] = $id_user;
 		$data['page_titel'] = "My Profil";
 		$data['content'] = "front/profil_alumni";
+		$this->load->view('main',$data);
+	}
+	function cv_alumni(){
+		$this->load->model('alumni');
+		$user = $this->uri->segment(3);
+		$id_user = $this->alumni->get_id_siswa($user);
+		$data['get_profil'] = $this->alumni->get_profil($id_user);
+		$data['page_title'] = "Daftar Riwayat Hidup";
+		$data['id_user'] = $id_user;
+		$data['page_titel'] = "My Profil";
+		$data['content'] = "front/cv_alumni";
 		$this->load->view('main',$data);
 	}
 	function about(){

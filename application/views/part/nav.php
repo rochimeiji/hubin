@@ -30,11 +30,11 @@
       			<li ><a x href="">Home</a></li>
 				<li class="dropdown">
         			<a pointer class="dropdown-toggle" data-toggle="dropdown">Prakerin<b class="caret"></b></a>
-        			<ul class="dropdown-menu">
+        			<ul class="dropdown-menu prakerin">
           				<li><a x href="social-icons">SURTA</a></li>
-						<li><a x href="fontawesome">RPL</a></li>
-						<li><a x href="halflings">GEOTA</a></li>
-						<li><a x href="glyphicons">GARMEN</a></li>
+      						<li><a x href="fontawesome">RPL</a></li>
+      						<li><a x href="halflings">GEOTA</a></li>
+      						<li><a x href="glyphicons">GARMEN</a></li>
         			</ul>
       			</li>
       			<li ><a x href="front/about">Loker</a></li>

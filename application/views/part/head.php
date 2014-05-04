@@ -26,7 +26,7 @@
 	<!-- end: Facebook Open Graph -->
 		
 	<!-- <link href="assets/style.css" rel="shortcut-icon"> -->
-	<link href="front/style" rel="stylesheet" media='screen' type='text/css'>
+	<link href="front/style" rel="stylesheet" style>
 	<!-- end: CSS -->
 
 	<script src="assets/jquery.js"></script>
@@ -43,8 +43,8 @@
 <body>
 <div loading><img src='assets/img/ajax_loader.gif'></div>
 <div class='line-smk'>
-	<div class='line-surta'></div>
-	<div class='line-rpl'></div>
-	<div class='line-geota'></div>
-	<div class='line-garmen'></div>
+	<div class='line-surta' rel='#23A240'><h2>SURTA</h2></div>
+	<div class='line-rpl' rel='#3598db'><h2>RPL</h2></div>
+	<div class='line-geota' rel='#E99D23'><h2>GEOTA</h2></div>
+	<div class='line-garmen' rel='#8c47a4'><h2>GARMEN</h2></div>
 </div>

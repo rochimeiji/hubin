@@ -89,4 +89,40 @@ $.get('assets/js/jquery.validate.js',function(){
 			nama_org: {required:"Organisasi harus diisi"},
 		}
 	});
+	// Validasi Pengalaman Organisasi
+	$('#pengalaman-kerja').validate({
+		rules:{
+			pengalaman_kerja: {required:true}
+		},
+		messages:{
+			pengalaman_kerja: {required:"Pengalaman Kerja harus diisi"}
+		}
+	});
+	// Validasi Pengalaman Organisasi
+	$('#keahlian-siswa').validate({
+		rules:{
+			ket_keahlian: {required:true}
+		},
+		messages:{
+			ket_keahlian: {required:"Keahlian harus diisi"}
+		}
+	});
+	// Validasi Pengalaman Organisasi
+	$('#prestasi-siswa').validate({
+		rules:{
+			prestasi: {required:true}
+		},
+		messages:{
+			prestasi: {required:"Prestasi harus diisi"}
+		}
+	});
+	// Validasi Portofolio
+	$('#portofolio').validate({
+		rules:{
+			title_portofolio: {required:true},
+		},
+		messages:{
+			title_portofolio: {required:"Judul Portofolio harus diisi"},
+		}
+	});
 });

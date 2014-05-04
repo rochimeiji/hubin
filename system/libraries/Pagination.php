@@ -40,21 +40,21 @@ class CI_Pagination {
 	var $prev_link			= '&lt;';
 	var $last_link			= 'Last &rsaquo;';
 	var $uri_segment		= 3;
-	var $full_tag_open		= '';
-	var $full_tag_close		= '';
-	var $first_tag_open		= '';
-	var $first_tag_close	= '&nbsp;';
-	var $last_tag_open		= '&nbsp;';
-	var $last_tag_close		= '';
+	var $full_tag_open		= '<ul class="pagination">';
+	var $full_tag_close		= '</ul>';
+	var $first_tag_open		= '<li>';
+	var $first_tag_close	= '</li>';
+	var $last_tag_open		= '<li>';
+	var $last_tag_close		= '</li>';
 	var $first_url			= ''; // Alternative URL for the First Page.
-	var $cur_tag_open		= '&nbsp;<strong>';
-	var $cur_tag_close		= '</strong>';
-	var $next_tag_open		= '&nbsp;';
-	var $next_tag_close		= '&nbsp;';
-	var $prev_tag_open		= '&nbsp;';
-	var $prev_tag_close		= '';
-	var $num_tag_open		= '&nbsp;';
-	var $num_tag_close		= '';
+	var $cur_tag_open		= '<li class="current">';
+	var $cur_tag_close		= '</li>';
+	var $next_tag_open		= '<li>';
+	var $next_tag_close		= '</li>';
+	var $prev_tag_open		= '<li>';
+	var $prev_tag_close		= '</li>';
+	var $num_tag_open		= '<li>';
+	var $num_tag_close		= '</li>';
 	var $page_query_string	= FALSE;
 	var $query_string_segment = 'per_page';
 	var $display_pages		= TRUE;
@@ -228,7 +228,7 @@ class CI_Pagination {
 		if  ($this->first_link !== FALSE AND $this->cur_page > ($this->num_links + 1))
 		{
 			$first_url = ($this->first_url == '') ? $this->base_url : $this->first_url;
-			$output .= $this->first_tag_open.'<a '.$this->anchor_class.'href="'.$first_url.'">'.$this->first_link.'</a>'.$this->first_tag_close;
+			$output .= '<a '.$this->anchor_class.'href="'.$first_url.'">'.$this->first_tag_open.$this->first_link.$this->first_tag_close.'</a>';
 		}
 
 		// Render the "previous" link
@@ -245,12 +245,12 @@ class CI_Pagination {
 
 			if ($i == 0 && $this->first_url != '')
 			{
-				$output .= $this->prev_tag_open.'<a '.$this->anchor_class.'href="'.$this->first_url.'">'.$this->prev_link.'</a>'.$this->prev_tag_close;
+				$output .= '<a '.$this->anchor_class.'href="'.$this->first_url.'">'.$this->prev_tag_open.$this->prev_link.$this->prev_tag_close.'</a>';
 			}
 			else
 			{
 				$i = ($i == 0) ? '' : $this->prefix.$i.$this->suffix;
-				$output .= $this->prev_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$i.'">'.$this->prev_link.'</a>'.$this->prev_tag_close;
+				$output .= '<a '.$this->anchor_class.'href="'.$this->base_url.$i.'">'.$this->prev_tag_open.$this->prev_link.$this->prev_tag_close.'</a>';
 			}
 
 		}
@@ -282,13 +282,13 @@ class CI_Pagination {
 
 						if ($n == '' && $this->first_url != '')
 						{
-							$output .= $this->num_tag_open.'<a '.$this->anchor_class.'href="'.$this->first_url.'">'.$loop.'</a>'.$this->num_tag_close;
+							$output .= '<a '.$this->anchor_class.'href="'.$this->first_url.'">'.$this->num_tag_open.$loop.$this->num_tag_close.'</a>';
 						}
 						else
 						{
 							$n = ($n == '') ? '' : $this->prefix.$n.$this->suffix;
 
-							$output .= $this->num_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$n.'">'.$loop.'</a>'.$this->num_tag_close;
+							$output .= '<a '.$this->anchor_class.'href="'.$this->base_url.$n.'">'.$this->num_tag_open.$loop.$this->num_tag_close.'</a>';
 						}
 					}
 				}
@@ -307,7 +307,7 @@ class CI_Pagination {
 				$i = ($this->cur_page * $this->per_page);
 			}
 
-			$output .= $this->next_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$this->prefix.$i.$this->suffix.'">'.$this->next_link.'</a>'.$this->next_tag_close;
+			$output .= '<a '.$this->anchor_class.'href="'.$this->base_url.$this->prefix.$i.$this->suffix.'">'.$this->next_tag_open.$this->next_link.$this->next_tag_close.'</a>';
 		}
 
 		// Render the "Last" link
@@ -321,7 +321,7 @@ class CI_Pagination {
 			{
 				$i = (($num_pages * $this->per_page) - $this->per_page);
 			}
-			$output .= $this->last_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$this->prefix.$i.$this->suffix.'">'.$this->last_link.'</a>'.$this->last_tag_close;
+			$output .= '<a '.$this->anchor_class.'href="'.$this->base_url.$this->prefix.$i.$this->suffix.'">'.$this->last_tag_open.$this->last_link.$this->last_tag_close.'</a>';
 		}
 
 		// Kill double slashes.  Note: Sometimes we can end up with a double slash

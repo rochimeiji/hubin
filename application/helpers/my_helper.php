@@ -30,7 +30,12 @@
 	function direct($url=''){
 		echo"
 		<script>
-			$('#body').load('$url?x=1');
+			$.ajax({url:'$url?x=1',
+				success:function(a){
+					$('#body').html(a);
+				}
+			});
+			window.history.pushState({path:location.pathname},'','$url');
 		</script>
 		";
 	}

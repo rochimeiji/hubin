@@ -1,10 +1,9 @@
 <script src='assets/js/validasi.js' ></script>
-<script src='assets/js/page/alumni.js' ></script>
 <?php $this->all->getMsg();?>
 <div class='col-md-6'>
 	<!-- Form Profil -->
 	<div class="panel panel-primary">
-    	<div class="panel-heading title">
+    	<div class="panel-heading">
 	      <h3 class="panel-title">Profil</h3>
 	    </div>
 	    <div class="panel-body">
@@ -32,150 +31,13 @@
 			</form>
 	    </div>
   	</div>
-	<!-- Form Pendidikan Formal-->
-	<div class="panel panel-primary">
-    	<div class="panel-heading title">
-	      <h3 class="panel-title">Pendidikan Formal <a pointer class='label label-success' toggle='pndk_formal'>Tambah</a></h3>
-	    </div>
-	    <div class="panel-body">
-			<div class="form-group">
-			<table class='table table-striped'>
-			<?php foreach($this->alumni->get_pndk_formal($id_user) as $pndk_formal){ ?>
-				<tr>
-					<td style='max-width:150px'>Tahun <?php echo $pndk_formal['awal_pndk_formal']."-".$pndk_formal['akhir_pndk_formal'];?></td>
-					<td>: <?php echo $pndk_formal['nama_pndk_formal']?></td>
-					<td><a rel-id='<?php echo $pndk_formal['id_pndk_formal'];?>' delete='pndk_formal' class='close'>×</a></td>
-				</tr>
-			<?php } ?>
-			</table>
-	    	<form id='pendidikan-formal' method='post' target-toggle='pndk_formal'>
-				<div class="form-group col-md-3">
-					<label>Awal Tahun</label>
-					<input type="text" name="awal_pndk_formal" class="form-control" placeholder="Awal">
-				</div>
-				<div class="form-group col-md-3">
-					<label>Akhir Tahun</label>
-					<input type="text" name="akhir_pndk_formal" class="form-control" placeholder="Akhir">
-				</div>
-				<div class='form-group col-md-12'>
-	    			<label>Nama Pendidikan Formal</label>
-					<input type="text" name="nama_pndk_formal" class="form-control" placeholder="Pendidikan Formal">
-				</div>				
-				<div class="actions" style='margin:10px 0px;'>
-					<input type="submit" name='add-pndk-formal' value="Tambah Pendidikan Formal" class="btn btn-primary col-sm-12">
-				</div>
-			</form>
-			</div>
-	    </div>
-  	</div>
-	<!-- Form Pendidikan Informal-->
-	<div class="panel panel-primary">
-    	<div class="panel-heading title">
-	      <h3 class="panel-title">Pendidikan Informal <a pointer class='label label-success' toggle='pndk_informal'>Tambah</a></h3>
-	    </div>
-	    <div class="panel-body">
-			<div class="form-group">
-			<table class='table table-striped'>
-			<?php foreach($this->alumni->get_pndk_informal($id_user) as $pndk_informal){ ?>
-				<tr>
-					<td style='max-width:150px'>Tahun <?php echo $pndk_informal['awal_pndk_informal']."-".$pndk_informal['akhir_pndk_informal'];?></td>
-					<td>: <?php echo $pndk_informal['nama_pndk_informal']?></td>
-					<td><a rel-id='<?php echo $pndk_informal['id_pndk_informal'];?>' delete='pndk_informal' class='close'>×</a></td>
-				</tr>
-			<?php } ?>
-			</table>
-	    	<form id='pendidikan-informal' method='post' target-toggle='pndk_informal'>
-				<div class="form-group col-md-3">
-					<label>Awal Tahun</label>
-					<input type="text" name="awal_pndk_informal" class="form-control" placeholder="Awal">
-				</div>
-				<div class="form-group col-md-3">
-					<label>Akhir Tahun</label>
-					<input type="text" name="akhir_pndk_informal" class="form-control" placeholder="Akhir">
-				</div>
-				<div class='form-group col-md-12'>
-	    			<label>Nama Pendidikan Informal</label>
-					<input type="text" name="nama_pndk_informal" class="form-control" placeholder="Pendidikan Informal">
-				</div>
-				<div class="actions" style='margin:10px 0px;'>
-					<input type="submit" name='add-pndk-formal' value="Tambah Pendidikan Informal" class="btn btn-primary col-sm-12">
-				</div>
-			</form>
-			</div>
-	    </div>
-  	</div>
-	<!-- Form Pengalaman Organisasi-->
-	<div class="panel panel-primary">
-    	<div class="panel-heading title">
-	      <h3 class="panel-title">Pengalaman Organisasi <a pointer class='label label-success' toggle='pengalaman_organisasi'>Tambah</a></h3>
-	    </div>
-	    <div class="panel-body">
-			<div class="form-group">
-			<table class='table table-striped'>
-			<?php foreach($this->alumni->get_org($id_user) as $row_org){ ?>
-				<tr>
-					<td style='max-width:150px'>Tahun <?php echo $row_org['awal_org']."-".$row_org['akhir_org'];?></td>
-					<td>: <?php echo $row_org['posisi_org']." di ".$row_org['nama_org']?></td>
-					<td><a rel-id='<?php echo $row_org['id_org'];?>' delete='pengalaman_organisasi' class='close'>×</a></td>
-				</tr>
-			<?php } ?>
-			</table>
-	    	<form id='pengalaman-organisasi' method='post' target-toggle='pengalaman_organisasi'>
-				<div class="form-group col-md-3">
-					<label>Awal Tahun</label>
-					<input type="text" name="awal_org" class="form-control" placeholder="Awal">
-				</div>
-				<div class="form-group col-md-3">
-					<label>Akhir Tahun</label>
-					<input type="text" name="akhir_org" class="form-control" placeholder="Akhir">
-				</div>
-				<div class="form-group col-md-6">
-					<label>Posisi</label>
-					<input type="text" name="posisi_org" class="form-control" placeholder="Posisi">
-				</div>
-				<div class="form-group col-md-12">
-					<label>Nama Organisasi</label>
-					<input type="text" name="nama_org" class="form-control" placeholder="Organisasi">
-				</div>
-					<div class='cl'></div>
-				<div class="actions" style='margin:10px 0px;'>
-					<input type="submit" name='add-pndk-formal' value="Tambah Pengalaman Organisasi" class="btn btn-primary col-sm-12">
-				</div>
-			</form>
-			</div>
-	    </div>
-  	</div>
-</div>
-<div class='col-md-6'>
-	<form id='biodata' method='post' enctype="multipart/form-data">
-	<!-- Form Foto Siswa -->
-	<div class="panel panel-primary">
-    	<div class="panel-heading title">
-	      <h3 class="panel-title">Foto</h3>
-	    </div>
-	    <div class='panel-body'>
-		<div class="form-group">
-			<div class='col-md-3'>
-				<label pointer for='foto_siswa'>
-					<img src='<?php echo img_default($get_profil['foto_siswa'],'foto');?>' class='foto' />
-				</label>
-			</div>
-			<div class="col-md-9">
-				<input id='foto_siswa' type="file" name="foto_siswa" class="form-control" accept="image/*" title="Upload Foto">
-				<a style='margin:10px 0px;' name='upload-foto' class='btn btn-primary' disabled>Upload Foto</a>
-				<div style='margin:10px 0px;' class="progress" hidden>
-			        <div class="progress-bar" role="progressbar" style="width:0%;"></div>
-			    </div>
-			</div>
-		</div>
-	    </div>
-	</div>
 	<!-- Form Biodata -->
 	<div class="panel panel-primary">
-    	<div class="panel-heading title">
+    	<div class="panel-heading">
 	      <h3 class="panel-title">Biodata</h3>
 	    </div>
 	    <div class='panel-body'>
+			<form id='biodata' method='post'>
 	    	<input type='hidden' name='edit-biodata' value='1' />
 			<div class="form-group">
 				<label>Nama Lengkap</label>
@@ -257,6 +119,259 @@
 				<input type="submit" value='Edit Biodata!' class="btn btn-primary col-md-12">
 			</div>
 	    </div>
+		</form>
   	</div>
-	</form>
 </div>
+<div class='col-md-6'>
+	<!-- Form Foto Siswa -->
+	<div class="panel panel-primary">
+    	<div class="panel-heading">
+	      <h3 class="panel-title">Foto</h3>
+	    </div>
+	    <div class='panel-body'>
+		<form id='foto-siswa' method='post' enctype="multipart/form-data">
+			<div class='col-md-3'>
+				<label pointer for='foto_siswa'>
+					<img src='<?php echo img_default($get_profil['foto_siswa'],'foto');?>' class='foto' />
+				</label>
+			</div>
+			<div class="col-md-9">
+				<input id='foto_siswa' type="file" name="foto_siswa" class="form-control" accept="image/*" title="Upload Foto">
+				<a style='margin:10px 0px;' name='upload-foto' class='btn btn-primary' disabled>Upload Foto</a>
+				<div style='margin:10px 0px;' class="progress" hidden>
+			        <div class="progress-bar" role="progressbar" style="width:0%;"></div>
+			    </div>
+			</div>
+	    </form>
+	    </div>
+	</div>
+	<!-- Form Pendidikan Formal-->
+	<div class="panel panel-primary">
+    	<div class="panel-heading">
+	      <h3 class="panel-title">Pendidikan Formal <a pointer class='label label-success' toggle='pndk_formal'>Tambah</a></h3>
+	    </div>
+	    <div class="panel-body">
+	    	<form id='pendidikan-formal' method='post' target-toggle='pndk_formal'>
+				<div class="form-group col-md-3">
+					<label>Awal Tahun</label>
+					<input type="text" name="awal_pndk_formal" class="form-control" placeholder="Awal">
+				</div>
+				<div class="form-group col-md-3">
+					<label>Akhir Tahun</label>
+					<input type="text" name="akhir_pndk_formal" class="form-control" placeholder="Akhir">
+				</div>
+				<div class='form-group col-md-12'>
+	    			<label>Nama Pendidikan Formal</label>
+					<input type="text" name="nama_pndk_formal" class="form-control" placeholder="Pendidikan Formal">
+				</div>				
+				<div class="actions" style='margin:10px 0px;'>
+					<input type="submit" name='add-pndk-formal' value="Tambah Pendidikan Formal" class="btn btn-primary col-sm-12">
+				</div>
+			</form>
+			<table class='table table-striped' style='margin:0px;'>
+			<?php foreach($this->alumni->get_pndk_formal($id_user) as $pndk_formal){ ?>
+				<tr>
+					<td width='130px'>Tahun <?php echo $pndk_formal['awal_pndk_formal']."-".$pndk_formal['akhir_pndk_formal'];?></td>
+					<td>: <?php echo $pndk_formal['nama_pndk_formal']?></td>
+					<td><a rel-id='<?php echo $pndk_formal['id_pndk_formal'];?>' delete='pndk_formal' class='close'>×</a></td>
+				</tr>
+			<?php } ?>
+			</table>
+	    </div>
+  	</div>
+	<!-- Form Pendidikan Informal-->
+	<div class="panel panel-primary">
+    	<div class="panel-heading">
+	      <h3 class="panel-title">Pendidikan Informal <a pointer class='label label-success' toggle='pndk_informal'>Tambah</a></h3>
+	    </div>
+	    <div class="panel-body">
+	    	<form id='pendidikan-informal' method='post' target-toggle='pndk_informal'>
+				<div class="form-group col-md-3">
+					<label>Awal Tahun</label>
+					<input type="text" name="awal_pndk_informal" class="form-control" placeholder="Awal">
+				</div>
+				<div class="form-group col-md-3">
+					<label>Akhir Tahun</label>
+					<input type="text" name="akhir_pndk_informal" class="form-control" placeholder="Akhir">
+				</div>
+				<div class='form-group col-md-12'>
+	    			<label>Nama Pendidikan Informal</label>
+					<input type="text" name="nama_pndk_informal" class="form-control" placeholder="Pendidikan Informal">
+				</div>
+				<div class="actions" style='margin:10px 0px;'>
+					<input type="submit" name='add-pndk-formal' value="Tambah Pendidikan Informal" class="btn btn-primary col-sm-12">
+				</div>
+			</form>
+			<table class='table table-striped' style='margin:0px;'>
+			<?php foreach($this->alumni->get_pndk_informal($id_user) as $pndk_informal){ ?>
+				<tr>
+					<td width='130px'>Tahun <?php echo $pndk_informal['awal_pndk_informal']."-".$pndk_informal['akhir_pndk_informal'];?></td>
+					<td>: <?php echo $pndk_informal['nama_pndk_informal']?></td>
+					<td><a rel-id='<?php echo $pndk_informal['id_pndk_informal'];?>' delete='pndk_informal' class='close'>×</a></td>
+				</tr>
+			<?php } ?>
+			</table>
+	    </div>
+  	</div>
+	<!-- Form Pengalaman Organisasi-->
+	<div class="panel panel-primary">
+    	<div class="panel-heading">
+	      <h3 class="panel-title">Pengalaman Organisasi <a pointer class='label label-success' toggle='pengalaman_organisasi'>Tambah</a></h3>
+	    </div>
+	    <div class="panel-body">
+	    	<form id='pengalaman-organisasi' method='post' target-toggle='pengalaman_organisasi'>
+				<div class="form-group col-md-3">
+					<label>Awal Tahun</label>
+					<input type="text" name="awal_org" class="form-control" placeholder="Awal">
+				</div>
+				<div class="form-group col-md-3">
+					<label>Akhir Tahun</label>
+					<input type="text" name="akhir_org" class="form-control" placeholder="Akhir">
+				</div>
+				<div class="form-group col-md-6">
+					<label>Posisi</label>
+					<input type="text" name="posisi_org" class="form-control" placeholder="Posisi">
+				</div>
+				<div class="form-group col-md-12">
+					<label>Nama Organisasi</label>
+					<input type="text" name="nama_org" class="form-control" placeholder="Organisasi">
+				</div>
+					<div class='cl'></div>
+				<div class="actions" style='margin:10px 0px;'>
+					<input type="submit" name='add-pndk-formal' value="Tambah Pengalaman Organisasi" class="btn btn-primary col-sm-12">
+				</div>
+			</form>
+			<table class='table table-striped' style='margin:0px;'>
+			<?php foreach($this->alumni->get_org($id_user) as $row_org){ ?>
+				<tr>
+					<td width='130px'>Tahun <?php echo $row_org['awal_org']."-".$row_org['akhir_org'];?></td>
+					<td>: <?php echo $row_org['posisi_org']." di ".$row_org['nama_org']?></td>
+					<td><a rel-id='<?php echo $row_org['id_org'];?>' delete='pengalaman_organisasi' class='close'>×</a></td>
+				</tr>
+			<?php } ?>
+			</table>
+	    </div>
+  	</div>
+	<!-- Form Keahlian -->
+	<div class="panel panel-primary">
+    	<div class="panel-heading">
+	      <h3 class="panel-title">Pengalaman Kerja <a pointer class='label label-success' toggle='pengalaman_kerja'>Tambah</a></h3>
+	    </div>
+	    <div class="panel-body">
+	    	<form id='pengalaman-kerja' method='post' target-toggle='pengalaman_kerja'>
+				<div class="form-group col-md-12">
+					<label>Pengalaman Kerja</label>
+					<textarea name="pengalaman_kerja" class="form-control" placeholder="Pengalaman Kerja"></textarea>
+				</div>
+					<div class='cl'></div>
+				<div class="actions" style='margin:10px 0px;'>
+					<input type="submit" name='add-pndk-formal' value="Tambah Keahlian" class="btn btn-primary col-sm-12">
+				</div>
+			</form>
+			<table class='table table-striped' style='margin:0px;'>
+			<?php $no = 1;
+			foreach($this->alumni->get_kerja($id_user) as $row_kerja){ ?>
+				<tr>
+					<td width='20px'><?php echo $no++."."?></td>
+					<td><?php echo $row_kerja['pengalaman_kerja']?></td>
+					<td><a rel-id='<?php echo $row_kerja['id_kerja'];?>' delete='pengalaman_kerja' class='close'>×</a></td>
+				</tr>
+			<?php } ?>
+			</table>
+		</div>
+  	</div>
+	<!-- Form Keahlian -->
+	<div class="panel panel-primary">
+    	<div class="panel-heading">
+	      <h3 class="panel-title">Keahlian <a pointer class='label label-success' toggle='keahlian_siswa'>Tambah</a></h3>
+	    </div>
+	    <div class="panel-body">
+	    	<form id='keahlian-siswa' method='post' target-toggle='keahlian_siswa'>
+				<div class="form-group col-md-12">
+					<label>Keterangan Keahlian</label>
+					<textarea name="ket_keahlian" class="form-control" placeholder="Keterangan Keahlian"></textarea>
+				</div>
+					<div class='cl'></div>
+				<div class="actions" style='margin:10px 0px;'>
+					<input type="submit" name='add-pndk-formal' value="Tambah Keahlian" class="btn btn-primary col-sm-12">
+				</div>
+			</form>
+			<table class='table table-striped' style='margin:0px;'>
+			<?php $no = 1;
+			foreach($this->alumni->get_keahlian($id_user) as $row_keahlian){ ?>
+				<tr>
+					<td width='20px'><?php echo $no++."."?></td>
+					<td><?php echo $row_keahlian['ket_keahlian']?></td>
+					<td><a rel-id='<?php echo $row_keahlian['id_keahlian'];?>' delete='keahlian_siswa' class='close'>×</a></td>
+				</tr>
+			<?php } ?>
+			</table>
+		</div>
+  	</div>
+	<!-- Form Keahlian -->
+	<div class="panel panel-primary">
+    	<div class="panel-heading">
+	      <h3 class="panel-title">Prestasi <a pointer class='label label-success' toggle='prestasi_siswa'>Tambah</a></h3>
+	    </div>
+	    <div class="panel-body">
+	    	<form id='prestasi-siswa' method='post' target-toggle='prestasi_siswa'>
+				<div class="form-group col-md-12">
+					<label>Prestasi</label>
+					<input type='text' name="prestasi" class="form-control" placeholder="Prestasi">
+				</div>
+					<div class='cl'></div>
+				<div class="actions" style='margin:10px 0px;'>
+					<input type="submit" name='add-pndk-formal' value="Tambah Prestasi" class="btn btn-primary col-sm-12">
+				</div>
+			</form>
+			<table class='table table-striped' style='margin:0px;'>
+			<?php $no = 1;
+			foreach($this->alumni->get_prestasi($id_user) as $row_prestasi){ ?>
+				<tr>
+					<td width='20px'><?php echo $no++."."?></td>
+					<td><?php echo $row_prestasi['prestasi']?></td>
+					<td><a rel-id='<?php echo $row_prestasi['id_prestasi'];?>' delete='prestasi_siswa' class='close'>×</a></td>
+				</tr>
+			<?php } ?>
+			</table>
+		</div>
+  	</div>
+</div>
+<div class='col-md-12'>
+	<!-- Form Portofolio -->
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+	      <h3 class="panel-title">Portofolio  <a pointer class='label label-success' toggle='portofolio'>Tambah</a></h3>
+	    </div>
+	    <div class='panel-body'>
+			<form id='portofolio' class='col-md-5' method='post' target-toggle='portofolio' enctype="multipart/form-data">
+				<div class="form-group">
+					<label>Judul Portofolio</label>
+					<input type="text" name="title_portofolio" class="form-control" placeholder="Judul Portofolio">
+				</div>
+				<div class='form-group'>
+					<label>Multi Upload Portofolio</label>
+					<input type="file" name="img_portofolio[]" class="form-control" multiple accept="image/*" title="Upload Foto">
+					<a style='margin:10px 0px;' name='upload-portofolio' class='btn btn-primary col-md-12' disabled>Upload Portofolio</a>
+					<div class='cl'></div>
+					<div style='margin:10px 0px;' class="progress" hidden>
+				        <div class="progress-bar" role="progressbar" style="width:0%;"></div>
+				    </div>
+				</div>
+	    		<legend></legend>
+		    </form>
+		    <div class='cl'></div>
+			<div class="row">
+			<?php foreach($this->alumni->get_portofolio($id_user) as $row_portofolio){ ?>
+		        <div class="col-sm-6 col-md-3">
+		       	  <i><a rel-id='<?php echo $row_portofolio['id_gallery'];?>' delete='portofolio' class='x btn btn-sm btn-danger'><i class='glyphicon glyphicon-remove'></i></a></i>
+		          <a class="thumbnail">
+		            <img src="assets/portofolio/<?php echo $row_portofolio['img_gallery'];?>" style="height: 180px; width: 100%; display: block;">
+		          </a>
+		        </div>
+		    <?php } ?>
+		    </div>
+	    </div>
+	</div>
+</div>
+<script src='assets/js/page/alumni.js' ></script>
